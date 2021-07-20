@@ -78,13 +78,22 @@ Use the finalScore function below to do the following:
   For example: invoking finalScore(inning, 9) might return this object:
 {
   "Home": 11,
-  "Away": 5
+  "Away": 5, 
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inningcb, number){
+  const newScore = { 'Home': 0 , 'Away': 0}
+
+  for (let i = 0; i < number; i++) {
+    newScore.Away += inningcb();
+    newScore.Home += inningcb();
+  }
+   return newScore;
+  
 }
+
+console.log('task 3', finalScore(inning,9));
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
